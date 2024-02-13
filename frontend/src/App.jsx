@@ -2,18 +2,23 @@
 import './App.css';
 import io from 'socket.io-client';
 import { useEffect, useState } from 'react';
+import { nanoid } from 'nanoid'
 
 const socket = io.connect('https://chat-app-a27y.onrender.com');
 
-function App() {
+function App() 
+{
     const [message, setMessage] = useState('');
     const [chat, setChat] = useState([]);
     const [connected, setConnected] = useState(false);
     const [name, setName] = useState('anonymous');
+    const[id,setId] = useState(nanoid(8))
 
-    function sendChat(event) {
+    function sendChat(event) 
+    {
+        console.log(id)
         event.preventDefault();
-        socket.emit('chat', { user: name, message });
+        socket.emit('chat', {id :id, user: name, message });
         setMessage('');
     }
 
@@ -24,7 +29,7 @@ function App() {
                 setChat([...chat, payload]);
             });
         }
-    }, [connected, chat]);
+    }, [id,connected, chat]);
 
     return (
     <div className='w-screen min-h-screen px-4 py-10 bg-blue-200 md:px-40 '>
@@ -36,7 +41,7 @@ function App() {
                                     <div
                                         key={index}
                                         className={`rounded p-2 max-w-md ${
-                                            payload.user === name
+                                            payload.id === id
                                                 ? 'bg-blue-500 self-end text-white'
                                                 : 'bg-green-500 self-start text-white'
                                         }`}
