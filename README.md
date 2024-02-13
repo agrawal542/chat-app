@@ -13,12 +13,12 @@ To run this project locally, follow these steps:
 
 1. Clone the repository:
    ```bash
-   git clone [ https://github.com/agrawal542/blog-website.git](https://github.com/agrawal542/chat-app.git)
+   git clone https://github.com/agrawal542/chat-app.git
    cd chat-app
 
 # backend
 
-1. go to the backend directory
+1. Navigate to the backend directory:
    ```bash
    cd backend
 2. Install dependencies: 
@@ -30,13 +30,16 @@ To run this project locally, follow these steps:
 
 # frontend
 
-1. go to the frontend directory
+Open a new terminal for the frontend:
+
+1. Navigate to the frontend directory:
    ```bash
    cd frontend
 2. Install dependencies: 
    ```bash
    npm install
-3. Run the application:
+3. Change the Socket.IO URL to the localhost where the server is running.
+4. Run the application:
    ```bash
    npm run dev
 
