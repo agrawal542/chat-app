@@ -27,8 +27,8 @@ function App() {
     }, [connected, chat]);
 
     return (
-    <div className='w-screen px-20 py-10 bg-blue-200'>
-            <div className="container flex flex-col justify-between min-h-screen p-4 mx-auto shadow rounded-3xl shadow-blue-400 bg-gradient-to-r from-blue-500 to-cyan-400 sm:w-{90%} md:w-[60%]">
+    <div className='w-screen min-h-screen px-10 py-10 bg-blue-200 md:px-40 '>
+            <div className="container flex flex-col justify-between min-h-screen mx-auto shadow rounded-3xl shadow-blue-400 bg-gradient-to-r from-blue-500 to-cyan-400 ">
                         <h1 className="mb-4 text-3xl font-bold text-white">Real Life Chat App</h1>
                         {connected ? (
                             <div className="flex flex-col flex-1 space-y-2 overflow-y-auto">
